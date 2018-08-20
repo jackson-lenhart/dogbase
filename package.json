@@ -1,0 +1,24 @@
+{
+  "name": "dogbase",
+  "version": "1.0.0",
+  "description": "a database of dogs and owners",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node --presets env",
+    "test": "node tests/index.js --exec babel-node --presets env"
+  },
+  "author": "Jackson Lenhart",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.3"
+  }
+}
