@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js --exec babel-node --presets env",
-    "test": "node tests/index.js --exec babel-node --presets env"
+    "test": "mocha --require babel-core/register"
   },
   "author": "Jackson Lenhart",
   "license": "ISC",
@@ -14,11 +14,16 @@
     "express": "^4.16.3",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
     "sequelize": "^4.38.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.3"
-  }
+  },
+  "proxy": "http://localhost:9999"
 }
