@@ -1,7 +1,8 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 
-import models from './models'
+import dog from './routes/dog'
+import owner from './routes/owner'
 
 let app = express()
 
@@ -12,19 +13,5 @@ app.listen(
 
 app.use(bodyParser.json())
 
-app.post('/dog', (req, res) => {
-  let { name, breed, owner } = req.body
-
-  models.Dog.create({
-    name,
-    breed,
-    owner
-  })
-  .then(() => {
-    res.send('Dog created!')
-  })
-  .catch(err => {
-    res.status(500).send(err.message)
-    console.error(err)
-  })
-})
+app.use('/dog', dog)
+app.use('/owner', owner)
